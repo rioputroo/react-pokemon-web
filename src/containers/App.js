@@ -1,17 +1,13 @@
-import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import BaseRoute from '../components/BaseRoute';
+import { ApolloProvider } from '@apollo/client';
+import BaseRoute from '../base/BaseRoute';
+import { APOLLO_CLIENT_INSTANCE } from '../graphql/GraphClient';
 import './App.css';
 
 function App() {
-  const client = new ApolloClient({
-    uri: 'https://graphql-pokeapi.vercel.app/api/graphql',
-    cache: new InMemoryCache(),
-  });
-
   return (
-    <ApolloProvider client={client}>
+    <ApolloProvider client={APOLLO_CLIENT_INSTANCE}>
       <BrowserRouter>
         <div className="App">
           <BaseRoute />
