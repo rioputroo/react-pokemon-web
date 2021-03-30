@@ -6,8 +6,12 @@ import Label from '../components/Label/Label';
 import Stats from '../components/Stats/Stats';
 import Move from '../components/Move/Move';
 import pokeball from '../assets/icon-pokeball.png';
+import { useState } from 'react';
+import db from '../services/DBConfig';
 
 function PokemonDetails(props) {
+  const [catchPokemonState, setCatchPokemonState] = useState(null);
+
   const gqlVariables = {
     name: props.match.params.name,
   };
@@ -19,7 +23,22 @@ function PokemonDetails(props) {
   if (loading) return <Loading />;
   if (error) return 'Error fetching pokemon details';
 
-  console.log(data);
+  const catchPokemon = () => {
+    const calc = Math.random() >= 0.5;
+
+    if (calc) {
+      setCatchPokemonState(!catchPokemonState);
+      addToDb();
+    }
+  };
+
+  const releasePokemon = () => {
+    setCatchPokemonState(false);
+  };
+
+  const addToDb = () => {
+    db.myPokemon.add({ name: data.pokemon.name });
+  };
 
   return (
     <div className="PokemonDetails">
@@ -40,9 +59,18 @@ function PokemonDetails(props) {
         </div>
       </div>
 
-      <button className="BtnCapture">
+      <button className="BtnCapture" onClick={catchPokemon}>
         <img alt="pokeball" src={pokeball} />
-        Catch</button>
+        Catch
+      </button>
+
+      {catchPokemonState ? (
+        <button className="BtnCapture" onClick={releasePokemon}>
+          <img alt="pokeball" src={pokeball} />
+          Release
+        </button>
+      ) : null}
+
       <div className="Moves">
         <h3>List of moves</h3>
         {data.pokemon.moves.map((move) => (
