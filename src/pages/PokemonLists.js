@@ -2,10 +2,11 @@ import { useQuery } from '@apollo/client';
 import { GET_POKEMONS } from '../graphql/GraphPokemon';
 import Card from '../components/Card';
 import Loading from '../components/Loading/Loading';
+import './PokemonLists.css';
 
 function PokemonLists(props) {
   const gqlVariables = {
-    limit: 10,
+    limit: 20,
     offset: 0,
   };
 
@@ -24,7 +25,6 @@ function PokemonLists(props) {
 
   return (
     <div className="PokemonLists">
-      <Loading />
       {data
         ? data.pokemons.results.map((item) => {
             return (

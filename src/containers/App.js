@@ -4,13 +4,17 @@ import { ApolloProvider } from '@apollo/client';
 import BaseRoute from '../base/BaseRoute';
 import { APOLLO_CLIENT_INSTANCE } from '../graphql/GraphClient';
 import './App.css';
+import Navbar from '../components/navbar/Navbar';
 
 function App() {
   return (
     <ApolloProvider client={APOLLO_CLIENT_INSTANCE}>
       <BrowserRouter>
         <div className="App">
-          <BaseRoute />
+          <Navbar />
+          <main className="Container">
+            <BaseRoute />
+          </main>
         </div>
       </BrowserRouter>
     </ApolloProvider>

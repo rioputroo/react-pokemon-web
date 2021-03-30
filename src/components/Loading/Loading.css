@@ -1,5 +1,5 @@
 .Loading img {
-  animation: spinLogo 0.9s ease-in-out infinite;
+  animation: spinLogo 0.5s ease-in-out infinite;
 }
 
 @keyframes spinLogo {

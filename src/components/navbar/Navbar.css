@@ -1,0 +1,61 @@
+.Navbar {
+  width: 100%;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 12%);
+  position: sticky;
+  top: 0;
+  background-color: #fbfbfb;
+}
+
+.Navbar nav {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Logo img {
+  width: 200px;
+  height: 100px;
+}
+
+.ListNav {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.ListNav li {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.ListNav li a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+  font-weight: 300;
+  font-size: 1em;
+  margin: 0 16px;
+  padding: 8px 32px;
+  border-radius: 8px;
+  transition: opacity 5s ease-in;
+}
+
+.ListNav li a.active {
+  background-color: #dc2626;
+  color: #fff;
+}
+
+.ListNav li a:hover {
+  background-color: #b91c1c;
+  color: #fff;
+}
+
+.ListNav img {
+  width: 32px;
+  height: 32px;
+}

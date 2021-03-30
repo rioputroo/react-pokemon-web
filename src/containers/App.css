@@ -1,0 +1,9 @@
+.App {
+    display: flex;
+    flex-direction: column;
+}
+
+.Container {
+    max-width: 1280px;
+    margin: 16px auto;
+}
