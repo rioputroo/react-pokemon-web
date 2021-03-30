@@ -12,7 +12,7 @@ function App() {
       <BrowserRouter>
         <div className="App">
           <Navbar />
-          <main className="Container">
+          <main className="MainContainer">
             <BaseRoute />
           </main>
         </div>
