@@ -12,9 +12,9 @@ function App() {
       <BrowserRouter>
         <div className="App">
           <Navbar />
-          <main className="MainContainer">
-            <BaseRoute />
-          </main>
+            <main className="MainContainer">
+              <BaseRoute />
+            </main>
         </div>
       </BrowserRouter>
     </ApolloProvider>

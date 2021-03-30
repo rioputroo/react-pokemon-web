@@ -41,7 +41,7 @@ function MyPokemonLists(props) {
       {myPokemonState ? (
         myPokemonState.map((pokemon) => (
           <Card
-            key={pokemon.pokemon_id}
+            key={pokemon.random_id}
             pokemon={pokemon}
             clicked={() => pokemonSelectedHandler(pokemon.name)}
           />

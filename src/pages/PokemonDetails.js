@@ -37,10 +37,11 @@ function PokemonDetails(props) {
   };
 
   const addToDb = () => {
-    db.myPokemon.add({ 
-      pokemon_id: Date.now(),
+    db.myPokemon.add({
+      random_id: Date.now(),
+      pokemon_id: data.pokemon.id,
       name: data.pokemon.name,
-      image: data.pokemon.sprites.front_default
+      image: data.pokemon.sprites.front_default,
     });
   };
 

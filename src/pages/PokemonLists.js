@@ -10,7 +10,7 @@ import React, { useEffect, useState } from 'react';
 
 function PokemonLists(props) {
   const [isDataLengthState, setIsDataLengthState] = useState(0);
-
+  const [pokemonState, setPokemonState] = useState([]);
   const [gqlVariableState] = useState({
     limit: 20,
     offset: 0,
@@ -22,12 +22,16 @@ function PokemonLists(props) {
     if (loading) return <Loading />;
     if (error) return 'No Pokemon around, try come again later :(';
 
+    if (data) {
+      setPokemonState(data.pokemons.results);
+    }
+
     if (data.pokemons.results.length >= 5) {
       setIsDataLengthState(5);
     } else {
       setIsDataLengthState(data.pokemons.results.length);
     }
-  }, [loading, error, data]);
+  }, [loading, error, data, pokemonState]);
 
   const pokemonSelectedHandler = (name) => {
     props.history.push('/pokemon/' + name);
