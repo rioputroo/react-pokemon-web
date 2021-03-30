@@ -32,10 +32,6 @@ function PokemonDetails(props) {
     }
   };
 
-  const releasePokemon = () => {
-    setCatchPokemonState(false);
-  };
-
   const addToDb = () => {
     db.myPokemon.add({
       random_id: Date.now(),
@@ -68,13 +64,6 @@ function PokemonDetails(props) {
         <img alt="pokeball" src={pokeball} />
         Catch
       </button>
-
-      {catchPokemonState ? (
-        <button className="BtnCapture" onClick={releasePokemon}>
-          <img alt="pokeball" src={pokeball} />
-          Release
-        </button>
-      ) : null}
 
       <div className="Moves">
         <h3>List of moves</h3>

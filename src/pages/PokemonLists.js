@@ -9,7 +9,8 @@ import { css } from '@emotion/react';
 import React, { useEffect, useState } from 'react';
 
 function PokemonLists(props) {
-  const [isDataLengthState, setIsDataLengthState] = useState(0);
+  const [isDataLengthState, setIsDataLengthState] = useState(5);
+  const [isMyPokemonState, setIsMyPokemonState] = useState(false);
   const [pokemonState, setPokemonState] = useState([]);
   const [gqlVariableState] = useState({
     limit: 20,
@@ -26,12 +27,12 @@ function PokemonLists(props) {
       setPokemonState(data.pokemons.results);
     }
 
-    if (data.pokemons.results.length >= 5) {
-      setIsDataLengthState(5);
-    } else {
+    setIsMyPokemonState(props.match.path === '/my-pokemon');
+
+    if (data.pokemons.results.length < 5) {
       setIsDataLengthState(data.pokemons.results.length);
     }
-  }, [loading, error, data, pokemonState]);
+  }, [loading, error, data, pokemonState, props.match.path]);
 
   const pokemonSelectedHandler = (name) => {
     props.history.push('/pokemon/' + name);
@@ -51,7 +52,12 @@ function PokemonLists(props) {
       {data ? (
         data.pokemons.results.map((item) => {
           return (
-            <Card key={item.id} pokemon={item} clicked={() => pokemonSelectedHandler(item.name)} />
+            <Card
+              key={item.id}
+              pokemon={item}
+              clicked={() => pokemonSelectedHandler(item.name)}
+              isMyPokemon={isMyPokemonState}
+            />
           );
         })
       ) : (

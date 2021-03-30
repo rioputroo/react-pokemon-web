@@ -8,6 +8,7 @@ import { css } from '@emotion/react';
 
 function MyPokemonLists(props) {
   const [myPokemonState, setMyPokemonState] = useState([]);
+  const [isMyPokemonState, setIsMyPokemonState] = useState(false);
   const [isDataLengthState, setIsDataLengthState] = useState(0);
 
   useEffect(() => {
@@ -21,7 +22,9 @@ function MyPokemonLists(props) {
         setIsDataLengthState(pokemon.length);
       }
     });
-  }, []);
+
+    setIsMyPokemonState(props.match.path === '/my-pokemon');
+  }, [props.match.path]);
 
   const pokemonSelectedHandler = (name) => {
     props.history.push('/pokemon/' + name);
@@ -44,6 +47,7 @@ function MyPokemonLists(props) {
             key={pokemon.random_id}
             pokemon={pokemon}
             clicked={() => pokemonSelectedHandler(pokemon.name)}
+            isMyPokemon={isMyPokemonState}
           />
         ))
       ) : (
