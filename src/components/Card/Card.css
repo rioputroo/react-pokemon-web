@@ -20,7 +20,15 @@
 }
 
 .PokemonCard:hover {
-    animation: boxShadow .3s ease-in forwards;
+  animation: boxShadow 0.3s ease-in forwards;
+}
+
+.PokeStatus {
+  font-size: 11px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  color: #9ca3af;
+  background-color: #e5e7eb;
 }
 
 @keyframes boxShadow {

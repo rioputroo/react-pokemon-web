@@ -1,0 +1,94 @@
+.PokemonDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.PokemonDetails img {
+  width: 300px;
+  height: 300px;
+}
+
+.Profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-transform: capitalize;
+  margin: 16px 0;
+}
+
+.Profile h2 {
+  font-weight: 500;
+}
+
+.LabelList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.Stats {
+  display: flex;
+  align-items: center;
+}
+
+.BtnCapture {
+  outline: none;
+  cursor: pointer;
+  padding: 8px 32px;
+  box-shadow: 0 1px 4px -2px grey;
+  background: #fff;
+  font-weight: bold;
+  font-size: 1em;
+  text-transform: uppercase;
+  color: #000;
+  border: none;
+  box-shadow: 0 2px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px -1px rgb(0 0 0 / 6%);
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  margin: 0 16px;
+  padding: 8px 32px;
+  border-radius: 8px;
+}
+
+.BtnCapture img {
+  width: 40px;
+  height: 40px;
+  margin-right: 24px;
+}
+
+.Moves {
+  max-width: fit-content;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  max-height: 300px;
+  overflow: auto;
+  overflow-y: scroll;
+  margin: 24px 0;
+  position: relative;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+}
+
+.Moves h3 {
+  position: sticky;
+  top: 0;
+  margin: 0;
+  background: #fff;
+  padding-bottom: 4px;
+  text-align: center;
+}
+
+.Moves::-webkit-scrollbar {
+  width: 3px;
+}
+
+.Moves::-webkit-scrollbar-thumb {
+  height: 2px;
+  background: grey;
+  border-radius: 10px;
+}
