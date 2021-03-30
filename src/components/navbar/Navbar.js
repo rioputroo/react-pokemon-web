@@ -3,7 +3,6 @@ import camera from '../../assets/camera.png';
 import pokemonLogo from '../../assets/pokemon-logo.svg';
 import './Navbar.css';
 import { Link, NavLink } from 'react-router-dom';
-import PokemonLists from '../../pages/PokemonLists';
 
 function Navbar() {
   return (
