@@ -1,10 +1,11 @@
 import React from 'react';
+import './Card.css';
 
 function Card(props) {
   return (
     <div className="PokemonCard" onClick={props.clicked}>
       <img alt={props.pokemon.id} src={props.pokemon.image} />
-      <h4>{props.pokemon.name}</h4>
+      <p>{props.pokemon.name}</p>
     </div>
   );
 }

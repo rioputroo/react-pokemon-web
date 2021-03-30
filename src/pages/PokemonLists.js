@@ -1,6 +1,6 @@
 import { useQuery } from '@apollo/client';
 import { GET_POKEMONS } from '../graphql/GraphPokemon';
-import Card from '../components/Card';
+import Card from '../components/Card/Card';
 import Loading from '../components/Loading/Loading';
 import './PokemonLists.css';
 

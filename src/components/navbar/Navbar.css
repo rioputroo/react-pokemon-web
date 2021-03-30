@@ -33,11 +33,13 @@
 }
 
 .ListNav li a {
+  box-shadow: 0 2px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px -1px rgb(0 0 0 / 6%);
   display: flex;
   align-items: center;
   text-decoration: none;
   color: black;
-  font-weight: 300;
+  font-weight: 500;
+  text-transform: uppercase;
   font-size: 1em;
   margin: 0 16px;
   padding: 8px 32px;
@@ -58,4 +60,5 @@
 .ListNav img {
   width: 32px;
   height: 32px;
+  margin-right: 8px;
 }

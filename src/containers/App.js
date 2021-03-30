@@ -4,7 +4,7 @@ import { ApolloProvider } from '@apollo/client';
 import BaseRoute from '../base/BaseRoute';
 import { APOLLO_CLIENT_INSTANCE } from '../graphql/GraphClient';
 import './App.css';
-import Navbar from '../components/navbar/Navbar';
+import Navbar from '../components/Navbar/Navbar';
 
 function App() {
   return (

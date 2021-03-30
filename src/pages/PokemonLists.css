@@ -1,6 +1,13 @@
 .PokemonLists {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
+  display: grid;
+  justify-content: center;
+  gap: 16px 16px;
+  grid-auto-flow: row;
+  grid-template-columns: repeat(5, 30%);
+}
+
+@media all and (max-width: 768px) {
+  .PokemonLists {
+    grid-template-columns: repeat(2, 50%);
+  }
 }

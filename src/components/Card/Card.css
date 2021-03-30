@@ -1,0 +1,41 @@
+.PokemonCard {
+  border: 1px solid #f3f4f6;
+  border-radius: 8px;
+  padding: 8px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.PokemonCard img {
+  width: 75%;
+}
+
+.PokemonCard p {
+  font-size: 24px;
+  font-weight: 400;
+  text-transform: capitalize;
+}
+
+.PokemonCard:hover {
+    animation: boxShadow .3s ease-in forwards;
+}
+
+@keyframes boxShadow {
+  0% {
+    box-shadow: none;
+    transform: translateY(0);
+  }
+
+  50% {
+    box-shadow: 0 1px 3px -1px rgb(0 0 0 / 5%), 0 1px 2px -1px rgb(0 0 0 / 3%);
+    transform: translateY(1%);
+  }
+
+  100% {
+    box-shadow: 0 2px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px -1px rgb(0 0 0 / 6%);
+    transform: translateY(0);
+  }
+}
