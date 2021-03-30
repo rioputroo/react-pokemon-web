@@ -1,6 +1,7 @@
 import { useQuery } from '@apollo/client';
 import { GET_POKEMONS } from '../graphql/GraphPokemon';
 import Card from '../components/Card';
+import Loading from '../components/Loading/Loading';
 
 function PokemonLists(props) {
   const gqlVariables = {
@@ -10,7 +11,7 @@ function PokemonLists(props) {
 
   const { loading, error, data } = useQuery(GET_POKEMONS, { variables: gqlVariables });
 
-  if (loading) return 'Loading...';
+  if (loading) return <Loading />;
   if (error) return 'Error!';
 
   if (data) {
@@ -23,11 +24,18 @@ function PokemonLists(props) {
 
   return (
     <div className="PokemonLists">
-      {data.pokemons.results.map((item) => {
-        return (
-          <Card key={item.id} pokemon={item} clicked={() => pokemonSelectedHandler(item.name)} />
-        );
-      })}
+      <Loading />
+      {data
+        ? data.pokemons.results.map((item) => {
+            return (
+              <Card
+                key={item.id}
+                pokemon={item}
+                clicked={() => pokemonSelectedHandler(item.name)}
+              />
+            );
+          })
+        : 'No pokemons :('}
     </div>
   );
 }

@@ -1,0 +1,17 @@
+.Loading img {
+  animation: spinLogo 0.9s ease-in-out infinite;
+}
+
+@keyframes spinLogo {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(15deg);
+  }
+
+  100% {
+    transform: rotate(710deg);
+  }
+}

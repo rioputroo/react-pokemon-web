@@ -1,10 +1,7 @@
 import { useQuery } from '@apollo/client';
-import { useState } from 'react';
 import { GET_POKEMON_DETAILS } from '../graphql/GraphPokemon';
 
 function PokemonDetails(props) {
-  const [catchPokemonState, setcatchPokemonState] = useState(null);
-
   const gqlVariables = {
     name: props.match.params.name,
   };
