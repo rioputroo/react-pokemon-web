@@ -5,7 +5,6 @@ import './Card.css';
 import db from '../../services/DBConfig';
 import { css } from '@emotion/react';
 import pokeball from '../../assets/icon-pokeball.png';
-import { useHistory } from 'react-router';
 
 function Card(props) {
   const [pokemonCount, setPokemonCount] = useState(0);
