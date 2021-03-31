@@ -89,7 +89,9 @@ function Card(props) {
   return (
     <div className="PokemonCard" onClick={props.clicked}>
       <img alt={props.pokemon.id} className="PokemonCardImage" src={props.pokemon.image} />
+      {props.isMyPokemon ? <span>{props.pokemon.nickname}</span> : null}
       <p>{props.pokemon.name}</p>
+
       {pokemonAction}
     </div>
   );

@@ -8,9 +8,16 @@ import Move from '../components/Move/Move';
 import pokeball from '../assets/icon-pokeball.png';
 import { useState } from 'react';
 import db from '../services/DBConfig';
+import Modal from '../components/Modal/Modal';
+import Backdrop from '../components/Backdrop/Backdrop';
 
 function PokemonDetails(props) {
   const [catchPokemonState, setCatchPokemonState] = useState(null);
+  const [modalIsOpen, setModailIsOpen] = useState(false);
+  const [modalMessage, setModalMessage] = useState({
+    msg: '',
+    status: false,
+  });
 
   const gqlVariables = {
     name: props.match.params.name,
@@ -28,21 +35,51 @@ function PokemonDetails(props) {
 
     if (calc) {
       setCatchPokemonState(!catchPokemonState);
-      addToDb();
+      // addToDb();
+      setModalMessage({
+        msg: 'You got a Pokemon!!! You can set nickname for this pokemon',
+        status: true,
+      });
+    } else {
+      setModalMessage({
+        msg: "Unfortunately you didn't catch that. Don't give up!",
+        status: false,
+      });
     }
+
+    showModal();
   };
 
-  const addToDb = () => {
+  const addToDb = (nickname) => {
     db.myPokemon.add({
       random_id: Date.now(),
       pokemon_id: data.pokemon.id,
       name: data.pokemon.name,
       image: data.pokemon.sprites.front_default,
+      nickname: nickname,
     });
+  };
+
+  const showModal = () => {
+    setModailIsOpen(true);
+  };
+
+  const closeModal = (inputData) => {
+    if (modalMessage.status) {
+      addToDb(inputData);
+    }
+    setModailIsOpen(false);
   };
 
   return (
     <div className="PokemonDetails">
+      <Modal
+        show={modalIsOpen}
+        closed={(inputData) => closeModal(inputData)}
+        message={modalMessage}
+      />
+      <Backdrop show={modalIsOpen} />
+
       <div className="Profile">
         <div className="Stats">
           <img alt={data.pokemon.name} src={data.pokemon.sprites.front_default} />
