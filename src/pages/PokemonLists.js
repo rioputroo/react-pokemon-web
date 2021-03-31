@@ -54,7 +54,17 @@ function PokemonLists(props) {
         justify-content: center;
         gap: 16px 16px;
         grid-auto-flow: row;
+        padding-bottom: 90px;
         grid-template-columns: repeat(${isDataLengthState}, 1fr);
+        @media all and (max-width: 1024px) {
+          grid-template-columns: repeat(4, 1fr);
+        };
+        @media all and (max-width: 768px) {
+          grid-template-columns: repeat(3, 1fr);
+        };
+        @media all and (max-width: 590px) {
+          grid-template-columns: repeat(2, 1fr);
+        };
       `}
     >
       {pokemonState ? (
@@ -75,7 +85,6 @@ function PokemonLists(props) {
       {availableNext > 0 ? (
         <button
           css={css`
-            grid-column: 3;
             box-shadow: 0 2px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px -1px rgb(0 0 0 / 6%);
             font-weight: 500;
             text-transform: uppercase;

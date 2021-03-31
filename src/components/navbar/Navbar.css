@@ -62,3 +62,28 @@
   height: 32px;
   margin-right: 8px;
 }
+
+.ListNavMobile {
+  display: none;
+}
+
+@media all and (max-width: 768px) {
+  .ListNav {
+    position: fixed;
+    bottom: 0;
+    background: white;
+    box-shadow: 0 5px 20px 8px rgb(0 0 0 / 10%), 0 2px 4px -1px rgb(0 0 0 / 6%);
+    width: 100%;
+    justify-content: center;
+  }
+
+  .ListNav li a {
+    box-shadow: none;
+    border-radius: 0;
+    font-size: 12px;
+  }
+
+  .Navbar nav {
+    justify-content: center;
+  }
+}

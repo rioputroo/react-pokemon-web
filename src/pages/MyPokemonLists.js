@@ -38,7 +38,17 @@ function MyPokemonLists(props) {
         justify-content: center;
         gap: 16px 16px;
         grid-auto-flow: row;
+        padding-bottom: 90px;
         grid-template-columns: repeat(${isDataLengthState}, 1fr);
+        @media all and (max-width: 1200px) {
+          grid-template-columns: repeat(4, 1fr);
+        };
+        @media all and (max-width: 950px) {
+          grid-template-columns: repeat(3, 1fr);
+        };
+        @media all and (max-width: 590px) {
+          grid-template-columns: repeat(2, 1fr);
+        };
       `}
     >
       {myPokemonState ? (

@@ -35,7 +35,6 @@ function Card(props) {
         css={css`
           outline: none;
           cursor: pointer;
-          padding: 8px 32px;
           box-shadow: 0 1px 4px -2px grey;
           background: #34d399;
           font-weight: bold;
@@ -47,8 +46,7 @@ function Card(props) {
           display: flex;
           align-items: center;
           text-decoration: none;
-          margin: 0 16px;
-          padding: 8px 27px;
+          padding: 4px 16px;
           border-radius: 8px;
         `}
         onClick={releasePokemon}

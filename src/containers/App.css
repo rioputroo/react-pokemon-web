@@ -10,7 +10,15 @@
 
 @media all and (max-width: 768px) {
   .MainContainer {
-    max-width: 768px;
+    width: 500px;
     margin: 8px auto;
   }
 }
+
+@media all and (max-width: 590px) {
+  .MainContainer {
+    width: 300px;
+    margin: 8px auto;
+  }
+}
+

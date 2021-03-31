@@ -3,6 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-bottom: 100px;
 }
 
 .PokemonDetails img {
@@ -39,7 +40,7 @@
   cursor: pointer;
   padding: 8px 32px;
   box-shadow: 0 1px 4px -2px grey;
-  background: #34D399;
+  background: #34d399;
   font-weight: bold;
   font-size: 2em;
   text-transform: uppercase;
@@ -92,3 +93,30 @@
   background: grey;
   border-radius: 10px;
 }
+
+@media all and (max-width: 768px) {
+  .Stats {
+    flex-direction: column;
+  }
+
+  .StatsDetail {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .PokemonDetails img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .BtnCapture img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .StatName {
+    font-size: 11px;
+  }
+};

@@ -30,6 +30,20 @@ function Navbar() {
           </ul>
         </nav>
       </header>
+      <ul className="ListNavMobile">
+            <li>
+              <NavLink to="/" exact>
+                <img alt="explore-logo" src={pointer} />
+                Explore
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/my-pokemon">
+                <img alt="my-pokemon-lists" src={camera} />
+                My Pokemon Lists
+              </NavLink>
+            </li>
+          </ul>
     </div>
   );
 }
