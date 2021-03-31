@@ -12,7 +12,9 @@ function PokemonLists(props) {
   const [isDataLengthState, setIsDataLengthState] = useState(5);
   const [isMyPokemonState, setIsMyPokemonState] = useState(false);
   const [pokemonState, setPokemonState] = useState([]);
-  const [gqlVariableState] = useState({
+  const [availableNext, setAvailableNext] = useState(0);
+
+  const [gqlVariableState, setGqlVariableState] = useState({
     limit: 20,
     offset: 0,
   });
@@ -25,6 +27,7 @@ function PokemonLists(props) {
 
     if (data) {
       setPokemonState(data.pokemons.results);
+      setAvailableNext(data.pokemons.nextOffset);
     }
 
     setIsMyPokemonState(props.match.path === '/my-pokemon');
@@ -38,6 +41,11 @@ function PokemonLists(props) {
     props.history.push('/pokemon/' + name);
   };
 
+  const loadMorePokemons = (offset) => {
+    const newGqlVariable = { limit: 20 + offset, offset: 0 };
+    setGqlVariableState(newGqlVariable);
+  };
+
   return (
     <div
       className="PokemonLists"
@@ -49,8 +57,8 @@ function PokemonLists(props) {
         grid-template-columns: repeat(${isDataLengthState}, 1fr);
       `}
     >
-      {data ? (
-        data.pokemons.results.map((item) => {
+      {pokemonState ? (
+        pokemonState.map((item) => {
           return (
             <Card
               key={item.id}
@@ -63,6 +71,28 @@ function PokemonLists(props) {
       ) : (
         <Loading />
       )}
+
+      {availableNext > 0 ? (
+        <button
+          css={css`
+            grid-column: 3;
+            box-shadow: 0 2px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px -1px rgb(0 0 0 / 6%);
+            font-weight: 500;
+            text-transform: uppercase;
+            margin: 0 16px;
+            padding: 8px 32px;
+            border-radius: 8px;
+            background-color: #dc2626;
+            color: #fff;
+            border: none;
+            outline: none;
+            cursor: pointer;
+          `}
+          onClick={() => loadMorePokemons(availableNext)}
+        >
+          Load More
+        </button>
+      ) : null}
     </div>
   );
 }

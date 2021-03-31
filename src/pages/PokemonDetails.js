@@ -67,6 +67,8 @@ function PokemonDetails(props) {
   const closeModal = (inputData) => {
     if (modalMessage.status) {
       addToDb(inputData);
+      console.log(db.myPokemon.toArray());
+      props.history.push('/my-pokemon/');
     }
     setModailIsOpen(false);
   };
