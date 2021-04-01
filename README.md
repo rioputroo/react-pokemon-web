@@ -3,8 +3,12 @@ Pokemon web app built with React.js
 
 Demo: [Pokemon Web App](https://react-pokemon-web-rioputroo.vercel.app/)
 
-## Create React App
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+I'm using:
+- [Create React App](https://github.com/facebook/create-react-app)
+- [Graphql Pokemon API](https://github.com/mazipan/graphql-pokeapi)
+- [Apollo Client for React](https://www.apollographql.com/docs/react)
+- [IndexedDB](https://dexie.org/)
+- [CSS in JS](https://emotion.sh/docs/introduction)
 
 ## Available Scripts
 
