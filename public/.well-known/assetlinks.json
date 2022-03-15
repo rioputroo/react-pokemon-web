@@ -1,0 +1,6 @@
+[{
+        "relation": ["delegate_permission/common.handle_all_urls"],
+        "target" : { "namespace": "android_app", "package_name": "app.vercel.react_pokemon_web_rioputroo.twa",
+                     "sha256_cert_fingerprints": ["69:90:BB:57:55:B3:33:4A:CF:75:90:4E:A6:34:89:1B:3C:24:7D:E6:C7:6A:9C:B5:CF:C6:0F:31:4B:71:89:5F"] }
+      }
+]
