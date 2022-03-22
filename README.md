@@ -1,5 +1,5 @@
 # react-pokemon-web
-Pokemon web app built with React.js
+Pokemon web app built with React
 
 Demo: [Pokemon Web App](https://react-pokemon-web-rioputroo.vercel.app/)
 
